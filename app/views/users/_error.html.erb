@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <h2><%= pluralize(@user.errors.count, I18n.t(:error)) %> <%= I18n.t(:prohibited_this_user_from_being_saved)%>:</h2>
     <ul>
     <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
