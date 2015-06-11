@@ -20,4 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user_error_name_have_been_used: "User name have been used"
+  user_error_email_have_been_used: "User email have been used"
+  user_error_too_short: "must have at least 6 words"
+  user_success_created: "User was successfully created."
