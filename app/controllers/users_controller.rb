@@ -1,16 +1,18 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+  
   def new
     @user = User.new
   end
   
   def create
     @user = User.new user_params
-    respond_to do |format|
-      if @user.save
-        format.html {redirect_to root_path, notice: I18n.t(:user_success_created)} 
-      else
-        format.html {render :new}
-      end
+    if @user.save
+      log_in @user
+      flash[:success] = I18n.t(:welcome)
+      redirect_to root_path
+    else
+      render "new"
     end
   end
 
