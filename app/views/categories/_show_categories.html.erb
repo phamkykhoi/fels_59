@@ -1,0 +1,19 @@
+<% @categories.each do |category| %>
+<table width="100%">
+  <tr>
+    <td><strong><%= category.title.capitalize %></strong></td>
+    <td align="right">
+      <%= link_to I18n.t(:show), category %> |
+      <%= link_to I18n.t(:edit), edit_category_path(category)  %> |
+      <%= link_to I18n.t(:destroy), category, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>  
+</table>
+<hr>
+<% end %>  
+<table width="100%">
+<tr>
+  <td align="left"><%= will_paginate @categories, renderer: BootstrapPagination::Rails %></td>
+  <td align="right"><%= link_to I18n.t(:new_category), new_category_path %></td>
+</tr>
+</table>

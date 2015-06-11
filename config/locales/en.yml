@@ -25,8 +25,10 @@ en:
   user_error_too_short: "must have at least 6 words"
   user_success_created: "User was successfully created."
   user_create_my_acount: "Create my account"
+
   welcome: "Welcome to the Project tranning 01!"
   login_error: "Invalid email or password!"
+
   menu_project_name: "Project trainning 01"
   menu_home: "Home"
   menu_help: "Help"
@@ -34,4 +36,29 @@ en:
   menu_settings: "Settings"
   menu_login: "Log in"
   menu_logout: "Log out"
+  menu_tool: "Tool"
+  menu_category: "Category"
+  menu_lesson: "Lesson"
+  menu_word: "Word"
+  menu_user: "User"
+  sign_up: "Sign up"
+
   sessions_sign_up_now: "Sign up now!"
+
+  submit: "Submit"
+  
+  new_categoty: "New Category"
+  listing_categories: "Listing Categories"
+  edit_category: "Edit Category"
+  category_success_created: "Category was successfully created."
+  category_success_updated: "Category was successfully updated."
+  category_success_destroy: "Category was successfully destroy."
+
+  show: "Show"
+  edit: "Edit"
+  destroy: "Destroy"
+  new_category: "New Category"
+
+  error: "error"
+  prohibited_this_user_from_being_saved: "prohibited this user from being_saved"
+  prohibited_this_category_from_being_saved: "prohibited this category from being saved"
