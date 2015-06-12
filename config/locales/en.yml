@@ -42,6 +42,7 @@ en:
   menu_word: "Word"
   menu_user: "User"
   sign_up: "Sign up"
+  log_in: "Log in"
 
   sessions_sign_up_now: "Sign up now!"
 
@@ -60,5 +61,26 @@ en:
   new_category: "New Category"
 
   error: "error"
-  prohibited_this_user_from_being_saved: "prohibited this user from being_saved"
+  prohibited_this_user_from_being_saved: "prohibited this user from being saved"
   prohibited_this_category_from_being_saved: "prohibited this category from being saved"
+  prohibited_this_word_from_being_saved: "prohibited this word from being saved"
+
+  listing_words: "Listing Words"
+  new_word: "New Word"
+  word_edit: "Word Edit"
+  word_success_created: "Word was successfully created."
+  word_success_updated: "Word was successfully updated."
+  word_success_destroy: "Word was successfully destroy."
+
+  answer_success_created: "Answer was successfully created."
+  answer_success_updated: "Answer was successfully updated."
+  answer_success_destroy: "Answer was successfully destroy."
+
+  answer: "Answer"
+  option: "Option %{index}:"
+  correct: "Correct"
+  remove: "Remove"
+  back_to_listing_words: "Back to listing words"
+  this_word_doesnt_have_any_answer: "This word doesn't have any answer!"
+
+  are_you_sure: "Are you sure?"

@@ -1,0 +1,24 @@
+<h1><%= I18n.t(:listing_words) %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <% @words.each do |w| %>
+      <table width="100%">
+        <tr>
+          <td><strong><%= w.content.capitalize %></strong></td>
+          <td align="right">
+            <%= link_to I18n.t(:show), w %> |
+            <%= link_to I18n.t(:edit), edit_word_path(w) %> |
+            <%= link_to I18n.t(:destroy), w, method: :delete, data: {confirm: I18n.t(:are_you_sure)} %>
+          </td>
+        </tr>  
+      </table>
+      <hr>
+    <% end %>  
+    <table width="100%">
+      <tr>
+        <td align="left"><%= will_paginate @words, renderer: BootstrapPagination::Rails %></td>
+        <td align="right"><%= link_to I18n.t(:new_word), new_word_path %></td>
+      </tr>
+    </table>
+  </div>
+</div>
