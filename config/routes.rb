@@ -1,12 +1,39 @@
 Rails.application.routes.draw do
+  
   root "static_pages#home"
-  get "signup"  => "users#new"
+
   get    "login"   => "sessions#new"
   post   "login"   => "sessions#create"
   delete "logout"  => "sessions#destroy"
 
-  resources :users
-  resources :categories
+  get "signup"  => "users#new"
+  get "users"  => "users#index"
+  post "users"  => "users#create"
+  get "/users/new" => "users#new", as: "new_user"
+  get "/users/:id/edit" => "users#edit", as: "edit_user"
+  get "/users/:id" => "users#show", as: "user"
+  patch "/users/:id" => "users#update"
+  put "/users/:id" => "users#update"
+  delete "/users/:id" => "users#destroy"
+
+  get "/categories" => "categories#index", as: "categories"
+  post "/categories" => "categories#create"
+  get "/categories/new" => "categories#new", as: "new_category"
+  get "/categories/:id/edit" => "categories#edit", as: "edit_category"
+  get "/categories/:id" => "categories#show", as: "category"
+  patch "/categories/:id" => "categories#update"
+  put "/categories/:id" => "categories#update"
+  delete "/categories/:id" => "categories#destroy"
+
+  get "/words" => "words#index", as: "words"
+  post "/words" => "words#create"
+  get "/words/new" => "words#new", as: "new_word"
+  get "/words/:id/edit" => "words#edit", as: "edit_word"
+  get "/words/:id" => "words#show", as: "word"
+  patch "/words/:id" => "words#update"
+  put "/words/:id" => "words#update"
+  delete "/words/:id" => "words#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
