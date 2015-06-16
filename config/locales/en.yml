@@ -47,13 +47,15 @@ en:
   sessions_sign_up_now: "Sign up now!"
 
   submit: "Submit"
-  
+
   new_categoty: "New Category"
   listing_categories: "Listing Categories"
   edit_category: "Edit Category"
   category_success_created: "Category was successfully created."
   category_success_updated: "Category was successfully updated."
   category_success_destroy: "Category was successfully destroy."
+  categories_start_learn: "...Start learn"
+  categories_you_have_learned: "[You have learned ... words]"
 
   show: "Show"
   edit: "Edit"
@@ -84,3 +86,28 @@ en:
   this_word_doesnt_have_any_answer: "This word doesn't have any answer!"
 
   are_you_sure: "Are you sure?"
+
+  lesson_question: "Question"
+  lesson_answer: "Answer"
+  lesson_result: "Result"
+  lesson_previous: "Previous"
+  lesson_next: "Next"
+  lesson_submit: "Submit"
+  lesson_name: "Lesson in "
+  lessons_not_enought_word: "Not enought %{limit} words to learn."
+
+  word_list: "Word list"
+  start_lesson: "Start lesson"
+
+  danger:
+    not_enought_word: "Not enought %{limit} words to learn."
+
+  general:
+    total_word: "Total %{count} words."
+
+  lesson:
+    error_input: "Error input"
+    no_answer: "No answer!"
+    start_learn: "Start learn!"
+
+  app_title: "Base App"

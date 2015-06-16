@@ -1,0 +1,17 @@
+<section class="result" number="<%= f.options[:child_index] %>" style="display:<%= f.options[:child_index] != 0 ? "none" : "" %>">
+  <div class="question">
+    <div class="col-md-6 col-md-offset-3">
+      <h3 align="center"><%= I18n.t(:lesson_question) %>:&nbsp;&nbsp;<%= f.object.word.content %></h3>
+      <% f.object.word.answers.each_with_index do |answer, index| %>
+        <table class="w80">
+          <tr valign="middle">
+            <td align="left" width="25%"><h3><%= f.label I18n.t(:option, index: (index + 1)) %></h3></td>
+            <td width="15%"><%= f.radio_button :answer_id, answer.id, class: "radio_option" %></td>
+            <td><h3><%= answer.content.capitalize %></h3></td>
+          </tr>
+          <tr><td colspan="4"><hr></td></tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</section>

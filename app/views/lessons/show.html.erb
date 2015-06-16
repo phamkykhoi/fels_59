@@ -1,0 +1,39 @@
+<h1><%= I18n.t :lesson_result  %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>
+    <table class="w100">
+      <tr align="center">
+        <td><%= I18n.t :lesson_question %></td>
+        <td><%= I18n.t :lesson_answer  %></td>
+        <td><%= I18n.t :lesson_result %></td>
+      </tr>
+      <tr>
+        <td colspan="3"><hr></td>
+      </tr>
+      <% @words_passed = @category.words.lesson_passed @lesson %>
+      <% @lesson.words.each do |word| %>
+        <tr align="center">
+          <td><%= word.content %></td>
+          <td>
+            <% answer = word.answers.find_by correct: true %>
+            <% if answer %>
+              <%= answer.content %>
+            <% else %>
+              <%= I18n.t "lesson.no_answer" %>
+            <% end %>
+          </td>
+          <td><%= @words_passed.include? word %></td>
+        </tr>
+        <tr>
+          <td colspan="3"><hr></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td colspan="2"></td>
+        <td align="center"><%= @words_passed.count %>/<%= @lesson.words.count %></td>
+      </tr>
+    </table>
+    </h3>
+  </div>
+</div>

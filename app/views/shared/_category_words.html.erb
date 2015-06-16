@@ -1,0 +1,6 @@
+<% object.words.each_with_index do |word, index| %>
+  <%= word.content.capitalize %>
+  <% if index < object.words.count - 1 %>
+  |
+  <% end %>
+<% end %>
