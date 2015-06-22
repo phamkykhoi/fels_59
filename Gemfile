@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "jquery-turbolinks"
 gem "rails_config"
 gem "will_paginate-bootstrap"
 gem "will_paginate"

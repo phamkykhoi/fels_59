@@ -3,3 +3,4 @@ user_email_min_long: 5
 user_password_min_long: 5
 words_paginate: 5
 categories_paginate: 5
+lesson_max_word: 2

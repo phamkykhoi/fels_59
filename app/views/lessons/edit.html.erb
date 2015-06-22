@@ -1,0 +1,16 @@
+<h1><%= I18n.t(:lesson_name) %><%= @category.title %></h1>
+<h3 class="realtime" align="center"></h3>
+<div class="container">
+  <div class="row" id="lesson">
+    <%= form_for [@category, @lesson] do |f| %>
+      <%= f.fields_for :lesson_words do |builder| %>
+        <%= render "results", f: builder %>
+      <% end %>
+      <div align="center">
+        <%= link_to I18n.t(:lesson_previous), "#", class: "btn btn-primary control", id: "prev" %>
+        <%= link_to I18n.t(:lesson_next), "#", class: "btn btn-primary control", id: "next" %>
+        <%= button_tag I18n.t(:lesson_submit), class: "btn btn-primary", title: I18n.t(:lesson_submit) %>
+      </div>
+    <% end%>
+  </div>
+</div>
