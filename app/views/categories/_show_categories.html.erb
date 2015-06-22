@@ -10,9 +10,9 @@
     </tr>
     <tr>
       <td>
-        <em><%= I18n.t "general.totel_word", count: category.words.count %></em>
+        <em><%= I18n.t "general.total_word", count: category.words.count %></em>
         <% unless current_user.admin? %>
-          <em><%= I18n.t(:categories_you_have_learned) %></em>
+          <em><%= I18n.t :categories_you_have_learned, count: category.words.learned(current_user).count %></em>
         <% end %>
       </td>
       <td align="right">
@@ -22,7 +22,9 @@
           <%= link_to I18n.t(:destroy), category, method: :delete, data: {confirm: I18n.t(:are_you_sure)} %>
         <% else %>
           <em>
-            <%= link_to I18n.t(:categories_start_learn), category_lessons_path(category_id: category.id), method: :post %>
+            <% if category.words.unlearned(current_user).count > 0 %>
+              <%= link_to I18n.t(:categories_start_learn), category_lessons_path(category_id: category.id), method: :post %>
+            <% end %>
           </em>
         <% end %>
       </td>

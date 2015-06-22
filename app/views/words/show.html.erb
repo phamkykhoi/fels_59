@@ -1,2 +1,6 @@
 <h1><%= @word.content.capitalize %></h1>
-<%= render "show" %>
+<% if current_user.admin? %>
+  <%= render "admin/word", word: @word %>
+<% else %>
+  <%= render "show", word: @word %>
+<% end %>

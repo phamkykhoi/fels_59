@@ -2,7 +2,14 @@ class WordsController < ApplicationController
   before_action :set_word, except: [:new, :index, :create]
 
   def index
-    @words = Word.paginate page: params[:page], per_page: Settings.words_paginate
+    if params[:search].present?
+      @words = Word.filter_category(params[:category_id].to_i).send params[:learn].downcase, current_user
+      @words = @words.order_by_alphabet if "alphabet" == params[:sort_by]
+      @words = @words.filter_content params[:word_search] if params[:word_search].present?
+    else
+      @words = Word.all
+    end
+    @words = @words.paginate page: params[:page], per_page: Settings.words_paginate
   end
 
   def show
@@ -20,7 +27,7 @@ class WordsController < ApplicationController
   def create
     @word = Word.new word_params
     if @word.save
-      flash[:success] = I18n.t(:word_success_created)
+      flash[:success] = I18n.t :word_success_created
       redirect_to @word
     else
       render "new"
@@ -29,7 +36,7 @@ class WordsController < ApplicationController
 
   def update
     if @word.update word_params
-      flash[:success] = I18n.t(:word_success_updated)
+      flash[:success] = I18n.t :word_success_updated
       redirect_to @word
     else
       render "edit"
@@ -38,7 +45,7 @@ class WordsController < ApplicationController
 
   def destroy
     @word.destroy
-    flash[:success] = I18n.t(:word_success_destroy)
+    flash[:success] = I18n.t :word_success_destroy
     redirect_to words_path
   end
 
